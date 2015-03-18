@@ -1,0 +1,18 @@
+WJoy Unity Integration (for Unity5)
+Instructions:
+1. Build and run target WiimoteSocketApp in WJoy Xcodeproject.
+2. Hit sync on wiimote, then press button "Find Wiimote" in WiimoteSocketApp
+3. Run Unity project TestScene scene, then press "Connect Unity" in WiimoteSocketApp
+4. If Wii Motionplus is connected, hold the wiimote still until the message "calibrated" appears in Unity console
+
+The Unity integration currently works through TCP sockets, passing json messages.
+If Wii Motionplus is connected and the wiimote is calibrated (in the Unity game), the approximate rotation is calculated. This is drift-corrected from gyroscope values and when IR Values are centered.
+IR Values are visualized as red numbers, corresponding with the packet slot the tracked point is in.
+
+It should be pretty easy to implement an IR Pointing algorithm based off the data.
+
+More details:
+http://wiibrew.org/wiki/Wiimote
+
+Code originally written for MoeMoeRush2:
+https://www.youtube.com/watch?v=FIDD6lTOXx8
